@@ -1,19 +1,29 @@
-# Model extraction attacks
+# Model Extraction Attacks
 
-[door.py](https://github.com/the-nihilist-ninja/dl-model-extraction/blob/master/door.py) has the high-level experiment code. The final report for this project can be found [here](https://github.com/the-nihilist-ninja/dl-model-extraction/blob/master/DL_Project_Group_42_v1.1.pdf)
+[`door.py`](./door.py) contains the main experiment code. The final project report is available [here](./DL_Project_Group_42_v1.1.pdf).
 
 ## About
-The aim of the project is to analyse model extraction techniques.  Furthermore, it analyses how the extracted model can be used to do membership inference attack on the original model. It further explores if such an extracted momdel can be used to perform adversarial attacks on the original model
 
-## Experimental setup:
-- Victim models for datasets CIFAR-10 and CIFAR-100 were used to carry-out extraction attack analysis. The CIFAR-10 models were taken directly from [here](https://zenodo.org/record/4431043). For CIFAR-100, we trained our own models to act as victim.
-- Attacker model architecture was varied 
-- The extraction technique was also run on an Out of Distrbution dataset which we put together from downsampled ImageNet data (32x32). An many-to-one relation between the imagenet class and cifar-10 was prepared. Data for classes Deer and Horse were not found in Imagenet, hence they were downloaded from the internet and downsampled to 32 x 32.
+This project analyzes neural network model extraction techniques. It further investigates whether an extracted model can be used to conduct membership inference attacks and adversarial attacks on the original model.  
 
+## Experimental Setup
+
+- Used victim models for CIFAR-10 (from [zenodo.org](https://zenodo.org/record/4431043)) and custom-trained CIFAR-100 models for extraction attack analysis.
+- Varied attacker model architectures to test extraction effectiveness.
+- Applied extraction techniques to an out-of-distribution dataset, assembled from downsampled 32x32 ImageNet data. A mapping between ImageNet and CIFAR-10 classes was prepared (note: Deer and Horse classes were sourced online and downsampled).
+  
 ## Resources
-To help us analyse the performance, we restricted our experiments to CIFAR-10 and CIFAR-100. To emulate the victim model, we used pre-trained models from the following repositories:
-- https://zenodo.org/record/4431043
+
+- Emulated the victim model using pre-trained models from [zenodo.org/record/4431043](https://zenodo.org/record/4431043).
+- Experiments restricted to CIFAR-10 and CIFAR-100 datasets for reproducibility.
+- [Project report (PDF)](./DL_Project_Group_42_v1.1.pdf)
 
 ## References
-Data Free Model Extraction:
-https://arxiv.org/pdf/2011.14779.pdf
+
+- Data-Free Model Extraction: [arxiv.org/abs/2011.14779](https://arxiv.org/pdf/2011.14779.pdf)
+
+## Acknowledgments
+
+- Developed as part of **Deep Learning in Data Science** at KTH Royal Institute of Technology.
+- Contributors: Daniel Richards, Adhithyan Kalaivanan, Aishwarya Ganesan
+- Forked from original repo: https://github.com/dannyrichy/dl-model-extraction.git
